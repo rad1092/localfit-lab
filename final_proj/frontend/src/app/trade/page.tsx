@@ -21,6 +21,7 @@ import type {
 import type { SpatialMetric, SpatialZoneAnalysis } from "@/types/spatial";
 import { INDUSTRY_CODE_MAP } from "@/utils/constants";
 import {
+  ArrowLeft,
   ArrowUpRight,
   Bookmark,
   Building2,
@@ -227,6 +228,17 @@ function TradeContent() {
     router.push(`/trade?areaCode=${area}&area=${area}&industryCode=${industry}&industry=${industry}`);
   };
 
+  const returnToAreaPicker = () => {
+    setAreaData(null);
+    setSelectedIndustry(null);
+    setIndustryError("");
+    setSpatialAnalysis(null);
+    setActiveTab("overview");
+    setIsFavorite(false);
+    setSelectedArea(null);
+    window.location.assign("/trade");
+  };
+
   const setCompetition = (open: boolean, expanded = competitionExpanded) => {
     const params = new URLSearchParams(searchParams.toString());
     if (open) {
@@ -357,6 +369,14 @@ function TradeContent() {
           ) : (
             <>
               <header className="border-b p-5">
+                <button
+                  type="button"
+                  onClick={returnToAreaPicker}
+                  className="mb-4 inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-xs font-bold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  다른 상권 보기
+                </button>
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0"><p className="text-xs font-black text-primary">OFFICIAL TRADE AREA</p><h1 className="mt-1 truncate text-2xl font-black">{areaData.area_name}</h1><p className="mt-1 text-xs text-muted-foreground">상권코드 {areaData.area_code} · {periodLabel(metrics.period)}</p></div>
                   <div className="flex shrink-0 gap-1">
