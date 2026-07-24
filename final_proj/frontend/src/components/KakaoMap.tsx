@@ -1,5 +1,6 @@
 "use client";
 
+import { DemoMap } from "@/components/DemoMap";
 import { apiUrl } from "@/lib/api";
 import { analyzeOfficialAreas, analyzeSpatialZone, fetchOfficialAreaBoundary } from "@/lib/spatial";
 import { AreaBoundaryFeature, GeoJsonPolygonGeometry, SpatialZoneAnalysis, ZoneShape } from "@/types/spatial";
@@ -17,6 +18,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const KAKAO_MAP_APP_KEY =
   process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY || process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY;
+const DEMO_MAP_ENABLED = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 
 let kakaoMapSdkPromise: Promise<void> | null = null;
 
@@ -397,7 +399,14 @@ function formatZoneArea(areaM2: number) {
   return `${Math.round(areaM2).toLocaleString()}㎡`;
 }
 
-export function KakaoMap({
+export function KakaoMap(props: KakaoMapProps) {
+  if (DEMO_MAP_ENABLED) {
+    return <DemoMap {...props} />;
+  }
+  return <KakaoProductionMap {...props} />;
+}
+
+function KakaoProductionMap({
   lat,
   lng,
   areaName,

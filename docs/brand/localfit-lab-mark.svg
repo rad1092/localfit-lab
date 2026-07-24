@@ -1,0 +1,20 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="22" y1="16" x2="136" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#115E59"/>
+    </linearGradient>
+    <filter id="shadow" x="4" y="6" width="152" height="152" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0F3D38" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="16" y="12" width="128" height="128" rx="34" fill="url(#bg)"/>
+  </g>
+  <path d="M39 104C58 84 61 59 80 45C95 34 111 38 123 48" stroke="#99F6E4" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 10"/>
+  <circle cx="42" cy="105" r="8" fill="#5EEAD4" stroke="white" stroke-width="4"/>
+  <path d="M119 45C111.82 45 106 50.82 106 58C106 67.75 119 80 119 80C119 80 132 67.75 132 58C132 50.82 126.18 45 119 45Z" fill="#FDE68A"/>
+  <circle cx="119" cy="58" r="4.5" fill="#115E59"/>
+  <text x="78" y="104" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="-2">LF</text>
+  <rect x="50" y="126" width="60" height="4" rx="2" fill="#5EEAD4" opacity=".9"/>
+</svg>

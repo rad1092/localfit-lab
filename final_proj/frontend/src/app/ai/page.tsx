@@ -6,7 +6,7 @@ import {
   type NewsEvidenceItem,
 } from "@/components/TwoTierNewsEvidence";
 import { useReportJob } from "@/components/report-job-context";
-import { apiUrl, fetchAuth, logProductEvent } from "@/lib/api";
+import { apiUrl, DEMO_MODE, fetchAuth, logProductEvent } from "@/lib/api";
 import { displayGrade, displayGradeOrPending, userFacingMetricDisplay } from "@/lib/score-grade";
 import { AreaData } from "@/types/models";
 import Link from "next/link";
@@ -1144,14 +1144,20 @@ function ReportDetail({ reportData, areaName, isReportSaving, isExporting, onSav
             </span>
           )}
         </div>
-        <div className="flex shrink-0 flex-wrap gap-2">
-          <button onClick={onDownload} disabled={isExporting} className="inline-flex items-center gap-2 rounded-lg border px-3.5 py-2.5 text-sm font-semibold transition-colors hover:bg-accent disabled:opacity-50">
-            <Download className="h-4 w-4" /> {isExporting ? "PDF 생성 중..." : "PDF 다운로드"}
-          </button>
-          <button onClick={onSave} disabled={isReportSaving} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3.5 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-[#115e59] disabled:opacity-50">
-            <Save className="h-4 w-4" /> {isReportSaving ? "저장 중..." : "저장"}
-          </button>
-        </div>
+        {DEMO_MODE ? (
+          <div className="max-w-xs rounded-xl border border-[#0f766e]/25 bg-[#e6fffa] px-3.5 py-2.5 text-xs font-semibold leading-5 text-[#115e59]">
+            실행 데모에서는 계정 저장과 PDF 내보내기를 생략합니다.
+          </div>
+        ) : (
+          <div className="flex shrink-0 flex-wrap gap-2">
+            <button onClick={onDownload} disabled={isExporting} className="inline-flex items-center gap-2 rounded-lg border px-3.5 py-2.5 text-sm font-semibold transition-colors hover:bg-accent disabled:opacity-50">
+              <Download className="h-4 w-4" /> {isExporting ? "PDF 생성 중..." : "PDF 다운로드"}
+            </button>
+            <button onClick={onSave} disabled={isReportSaving} className="inline-flex items-center gap-2 rounded-lg bg-primary px-3.5 py-2.5 text-sm font-bold text-primary-foreground transition-colors hover:bg-[#115e59] disabled:opacity-50">
+              <Save className="h-4 w-4" /> {isReportSaving ? "저장 중..." : "저장"}
+            </button>
+          </div>
+        )}
       </div>
 
       {header && (

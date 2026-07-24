@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import "./globals.css";
 import { AppMain } from "@/components/AppMain";
 import { Chatbot } from "@/components/Chatbot";
+import { DemoBanner } from "@/components/DemoBanner";
 import { ProductEventTracker } from "@/components/ProductEventTracker";
 import { ReportJobProvider } from "@/components/report-job-context";
 import { SelectedAreaProvider } from "@/components/selected-area-context";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <ProductEventTracker />
                 <Sidebar />
                 <div className="flex min-w-0 flex-1 flex-col">
+                  <DemoBanner />
                   <Topbar />
                   <AppMain>{children}</AppMain>
                 </div>

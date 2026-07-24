@@ -2,6 +2,8 @@ const configuredApiBase = (process.env.NEXT_PUBLIC_API_BASE_URL || "")
   .trim()
   .replace(/\/+$/, "");
 
+export const DEMO_MODE = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
+
 export const API_BASE_URL = configuredApiBase
   ? configuredApiBase.endsWith("/api")
     ? configuredApiBase

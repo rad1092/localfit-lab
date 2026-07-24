@@ -2,7 +2,7 @@
 
 import { KakaoMap } from "@/components/KakaoMap";
 import { useSelectedArea } from "@/components/selected-area-context";
-import { apiUrl, fetchAuth, logProductEvent } from "@/lib/api";
+import { apiUrl, DEMO_MODE, fetchAuth, logProductEvent } from "@/lib/api";
 import { displayGradeOrPending } from "@/lib/score-grade";
 import type { AreaData, RankingData } from "@/types/models";
 import {
@@ -183,12 +183,12 @@ export default function Home() {
               <div>
                 <MapPin className="mx-auto h-4 w-4 text-primary" />
                 <strong className="mt-1 block text-sm">{stats?.area_count?.toLocaleString() || "-"}</strong>
-                <span className="text-[10px] text-muted-foreground">공식 상권</span>
+                <span className="text-[10px] text-muted-foreground">{DEMO_MODE ? "샘플 상권" : "공식 상권"}</span>
               </div>
               <div>
                 <Store className="mx-auto h-4 w-4 text-[#2563eb]" />
                 <strong className="mt-1 block text-sm">{stats?.store_point_count?.toLocaleString() || "-"}</strong>
-                <span className="text-[10px] text-muted-foreground">점포 위치</span>
+                <span className="text-[10px] text-muted-foreground">{DEMO_MODE ? "샘플 점포" : "점포 위치"}</span>
               </div>
               <div>
                 <Database className="mx-auto h-4 w-4 text-[#b45309]" />
