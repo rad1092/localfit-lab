@@ -87,6 +87,10 @@ export function Chatbot() {
   const router = useRouter();
 
   const mascotMinX = useCallback(() => 8, []);
+  const mascotMaxX = useCallback(() => {
+    const reservedRight = pathname === "/trade" && window.innerWidth >= 1024 ? 520 : 104;
+    return Math.max(mascotMinX(), window.innerWidth - reservedRight);
+  }, [mascotMinX, pathname]);
 
   const closeChatbot = useCallback(() => {
     setIsOpen(false);
@@ -124,7 +128,7 @@ export function Chatbot() {
 
   useEffect(() => {
     const clamp = (position: { x: number; y: number }) => ({
-      x: Math.min(Math.max(mascotMinX(), position.x), Math.max(mascotMinX(), window.innerWidth - 104)),
+      x: Math.min(Math.max(mascotMinX(), position.x), mascotMaxX()),
       y: Math.min(Math.max(68, position.y), Math.max(68, window.innerHeight - 128)),
     });
     const restorePosition = () => {
@@ -146,7 +150,7 @@ export function Chatbot() {
       window.clearTimeout(initialPosition);
       window.removeEventListener("resize", keepInsideViewport);
     };
-  }, [mascotMinX]);
+  }, [mascotMaxX, mascotMinX]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -337,7 +341,7 @@ export function Chatbot() {
       const dy = event.clientY - drag.startY;
       if (Math.hypot(dx, dy) > 5) drag.moved = true;
       const nextPosition = {
-        x: Math.min(Math.max(mascotMinX(), drag.originX + dx), Math.max(mascotMinX(), window.innerWidth - 104)),
+        x: Math.min(Math.max(mascotMinX(), drag.originX + dx), mascotMaxX()),
         y: Math.min(Math.max(68, drag.originY + dy), Math.max(68, window.innerHeight - 128)),
       };
       drag.currentX = nextPosition.x;

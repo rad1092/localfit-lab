@@ -141,7 +141,10 @@ function TradeContent() {
     }, 0);
     if (!areaCode) return () => window.clearTimeout(timer);
 
-    const url = new URL(apiUrl(`/areas/${encodeURIComponent(areaCode)}`));
+    const url = new URL(
+      apiUrl(`/areas/${encodeURIComponent(areaCode)}`),
+      window.location.origin,
+    );
     if (industryCode) url.searchParams.set("industry_code", industryCode);
     fetchAuth(url.toString(), { signal: controller.signal, cache: "no-store" })
       .then(async (response) => {

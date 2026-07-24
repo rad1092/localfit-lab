@@ -57,7 +57,10 @@ export function CompetitionDrawer({
       setLoading(true);
       setError("");
     }, 0);
-    const url = new URL(apiUrl(`/areas/${encodeURIComponent(areaCode)}`));
+    const url = new URL(
+      apiUrl(`/areas/${encodeURIComponent(areaCode)}`),
+      window.location.origin,
+    );
     url.searchParams.set("industry_code", industryCode);
     fetchAuth(url.toString(), { signal: controller.signal, cache: "no-store" })
       .then(async (response) => {
