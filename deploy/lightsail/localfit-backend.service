@@ -1,0 +1,35 @@
+[Unit]
+Description=LocalFit FastAPI backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/srv/localfit/final_proj/backend
+EnvironmentFile=/srv/localfit/private/backend.env
+Environment="PYTHONUNBUFFERED=1"
+Environment="LOCALFIT_ENV=production"
+Environment="LOCALFIT_LEGACY_ADMIN_BOOTSTRAP=disabled"
+Environment="LOCALFIT_RUNTIME_ROOT=/srv/localfit/final_proj/runtime"
+Environment="LOCALFIT_DATABASE_PATH=/srv/localfit/final_proj/runtime/db/commercial.db"
+Environment="LOCALFIT_DATABASE_BACKUP_ROOT=/srv/localfit/final_proj/runtime/db/backups"
+Environment="LOCALFIT_REPORTS_ROOT=/srv/localfit/final_proj/runtime/reports"
+Environment="LOCALFIT_EXPORTS_ROOT=/srv/localfit/final_proj/runtime/exports"
+Environment="LOCALFIT_LOGS_ROOT=/srv/localfit/final_proj/runtime/logs"
+Environment="LOCALFIT_TMP_ROOT=/srv/localfit/final_proj/runtime/tmp"
+Environment="LOCALFIT_DATA_ROOT=/srv/localfit/datacorpus"
+Environment="LOCALFIT_RESEARCH_ROOT=/srv/localfit/research"
+Environment="LOCALFIT_KEY_FILE=/srv/localfit/private/key.md"
+Environment="LOCALFIT_KNOWLEDGE_ROOT=/srv/localfit/final_proj/resources/knowledge/rag_sources"
+Environment="LOCALFIT_CORS_ORIGINS=https://whago.net,https://www.whago.net"
+Environment="LOCALFIT_CORE_SOURCE_HEALTH_TTL_HOURS=168"
+ExecStart=/srv/localfit/final_proj/.venv/bin/python -m uvicorn main:app --host 127.0.0.1 --port 8000 --workers 1 --proxy-headers --forwarded-allow-ips=127.0.0.1
+Restart=always
+RestartSec=3
+TimeoutStopSec=30
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

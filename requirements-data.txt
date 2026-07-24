@@ -1,0 +1,16 @@
+pandas
+numpy
+matplotlib
+seaborn
+nbformat
+nbclient
+ipykernel
+openpyxl
+pyarrow
+geopandas
+pyogrio
+pyshp
+shapely
+pyproj
+duckdb
+reportlab

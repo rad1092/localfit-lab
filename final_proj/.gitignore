@@ -1,0 +1,36 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env.local
+
+# Product runtime artifacts
+runtime/*
+!runtime/README.md
+
+# Legacy runtime locations kept ignored during migration
+backend/reports_out/
+backend/tmp/
+backend/*.db
+backend/*.db-*
+backend/*.db-shm
+backend/*.db-wal
+backend/.codex-*
+frontend/.codex-*
+output/
+tmp/
+data/
+
+# Python caches
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/coverage/
+frontend/*.tsbuildinfo
+

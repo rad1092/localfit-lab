@@ -1,0 +1,130 @@
+{
+  "provider": "서울 열린데이터광장",
+  "scope": "서울특별시 전체 LocalData 인허가",
+  "coordinate_crs": "EPSG:5174",
+  "probe_date": "20260717",
+  "services": [
+    {
+      "service": "LOCALDATA_072404",
+      "source_id": "seoul_localdata_general_restaurant_license",
+      "service_name_ko": "일반음식점 인허가",
+      "industry_group": "음식점",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16094/S/1/datasetView.do",
+      "reuse_existing": true,
+      "verified_total_count": 535263
+    },
+    {
+      "service": "LOCALDATA_072405",
+      "source_id": "seoul_localdata_rest_cafe_license",
+      "service_name_ko": "휴게음식점 인허가",
+      "industry_group": "음식점",
+      "official_url": "https://data.seoul.go.kr/",
+      "reuse_existing": true,
+      "verified_total_count": 146301
+    },
+    {
+      "service": "LOCALDATA_051801",
+      "source_id": "seoul_localdata_beauty_license",
+      "service_name_ko": "미용업 인허가",
+      "industry_group": "생활서비스",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16063/S/1/datasetView.do",
+      "verified_total_count": 99132
+    },
+    {
+      "service": "LOCALDATA_051901",
+      "source_id": "seoul_localdata_barber_license",
+      "service_name_ko": "이용업 인허가",
+      "industry_group": "생활서비스",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16064/S/1/datasetView.do",
+      "verified_total_count": 15613
+    },
+    {
+      "service": "LOCALDATA_062001",
+      "source_id": "seoul_localdata_laundry_license",
+      "service_name_ko": "세탁업 인허가",
+      "industry_group": "생활서비스",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16065/S/1/datasetView.do",
+      "verified_total_count": 15353
+    },
+    {
+      "service": "LOCALDATA_114401",
+      "source_id": "seoul_localdata_public_bath_license",
+      "service_name_ko": "목욕장업 인허가",
+      "industry_group": "생활서비스",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16146/S/1/datasetView.do",
+      "verified_total_count": 3984
+    },
+    {
+      "service": "LOCALDATA_031101",
+      "source_id": "seoul_localdata_lodging_license",
+      "service_name_ko": "숙박업 인허가",
+      "industry_group": "숙박",
+      "official_url": "https://data.seoul.go.kr/",
+      "verified_total_count": 921
+    },
+    {
+      "service": "LOCALDATA_030901",
+      "source_id": "seoul_localdata_singing_practice_license",
+      "service_name_ko": "노래연습장업 인허가",
+      "industry_group": "여가서비스",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16037/S/1/datasetView.do",
+      "verified_total_count": 12799
+    },
+    {
+      "service": "LOCALDATA_031201",
+      "source_id": "seoul_localdata_domestic_travel_license",
+      "service_name_ko": "국내여행업 인허가",
+      "industry_group": "여행",
+      "official_url": "https://data.seoul.go.kr/",
+      "verified_total_count": 5437
+    },
+    {
+      "service": "LOCALDATA_031202",
+      "source_id": "seoul_localdata_overseas_travel_license",
+      "service_name_ko": "국외여행업 인허가",
+      "industry_group": "여행",
+      "official_url": "https://data.seoul.go.kr/",
+      "verified_total_count": 13556
+    },
+    {
+      "service": "LOCALDATA_031203",
+      "source_id": "seoul_localdata_general_travel_license",
+      "service_name_ko": "일반여행업 인허가",
+      "industry_group": "여행",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16051/S/1/datasetView.do",
+      "verified_total_count": 11717
+    },
+    {
+      "service": "LOCALDATA_103101",
+      "source_id": "seoul_localdata_golf_practice_license",
+      "service_name_ko": "골프연습장업 인허가",
+      "industry_group": "체육",
+      "official_url": "https://data.seoul.go.kr/",
+      "verified_total_count": 3615
+    },
+    {
+      "service": "LOCALDATA_103201",
+      "source_id": "seoul_localdata_billiards_license",
+      "service_name_ko": "당구장업 인허가",
+      "industry_group": "체육",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16133/S/1/datasetView.do",
+      "verified_total_count": 14028
+    },
+    {
+      "service": "LOCALDATA_104101",
+      "source_id": "seoul_localdata_sports_dojo_license",
+      "service_name_ko": "체육도장업 인허가",
+      "industry_group": "체육",
+      "official_url": "https://data.seoul.go.kr/",
+      "verified_total_count": 5692
+    },
+    {
+      "service": "LOCALDATA_104201",
+      "source_id": "seoul_localdata_fitness_license",
+      "service_name_ko": "체력단련장업 인허가",
+      "industry_group": "체육",
+      "official_url": "https://data.seoul.go.kr/dataList/OA-16142/S/1/datasetView.do",
+      "verified_total_count": 7281
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+.mascot {
+  display: inline-grid;
+  aspect-ratio: 1;
+  place-items: center;
+  transform-origin: 50% 82%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mascot img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.mascot[data-palette="navy"] img { filter: drop-shadow(0 8px 16px rgb(15 35 32 / 22%)); }
+.mascot[data-palette="cream"] img { filter: drop-shadow(0 8px 18px rgb(0 0 0 / 42%)); }
+.idle { animation: breathe 2.8s ease-in-out infinite; }
+.mascot[data-action="sit-stand"] { animation: none; }
+.listening { animation: listen 1.8s ease-in-out infinite; }
+.thinking { animation: think 1.45s ease-in-out infinite; }
+.speaking { animation: talk 420ms ease-in-out infinite; }
+.success { animation: celebrate 760ms cubic-bezier(.34, 1.56, .64, 1) both; }
+.error { animation: worry 520ms ease-in-out 2; }
+
+@keyframes breathe { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4%) scale(1.018, .99); } }
+@keyframes listen { 0%, 100% { transform: rotate(0deg) translateY(0); } 50% { transform: rotate(-2.5deg) translateY(-2%); } }
+@keyframes think { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-3%) rotate(1.5deg); } }
+@keyframes talk { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-2%) scale(1.012, .992); } }
+@keyframes celebrate { 0% { transform: translateY(0) scale(.94); } 48% { transform: translateY(-14%) scale(1.06, .96); } 72% { transform: translateY(0) scale(.98, 1.03); } 100% { transform: translateY(0) scale(1); } }
+@keyframes worry { 0%, 100% { transform: translateX(0) rotate(0); } 25% { transform: translateX(-3%) rotate(-1deg); } 75% { transform: translateX(3%) rotate(1deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot { animation: none; }
+}

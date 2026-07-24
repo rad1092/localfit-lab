@@ -1,0 +1,56 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+key.md
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+.venv/
+.venv*/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Runtime and databases
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+final_proj/runtime/*
+!final_proj/runtime/README.md
+final_proj/backend/reports_out/
+
+# Data and generated artifacts
+datacorpus/
+deliverables/
+final_proj/output/
+final_proj/tmp/
+tmp/
+*.pdf
+*.log
+*.out
+*.err
+
+# Local tools and OS files
+.codex/
+.agents/
+.claude/
+.vscode/
+.DS_Store
+Thumbs.db
+

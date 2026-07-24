@@ -1,0 +1,17 @@
+[
+  {
+    "area_name": "이태원 관광특구",
+    "business_type": "한식음식점",
+    "budget": 10000
+  },
+  {
+    "area_name": "명동 남대문 북창동 다동 무교동 관광특구",
+    "business_type": "커피-음료",
+    "budget": 8000
+  },
+  {
+    "area_name": "강남 마이스 관광특구",
+    "business_type": "편의점",
+    "budget": 20000
+  }
+]

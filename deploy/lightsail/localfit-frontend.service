@@ -1,0 +1,20 @@
+[Unit]
+Description=LocalFit Next.js frontend
+After=network-online.target localfit-backend.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/srv/localfit/final_proj/frontend
+Environment="NODE_ENV=production"
+Environment="NEXT_TELEMETRY_DISABLED=1"
+ExecStart=/usr/bin/npm run start -- --hostname 127.0.0.1 --port 3000
+Restart=always
+RestartSec=3
+TimeoutStopSec=30
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
