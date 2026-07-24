@@ -5,15 +5,7 @@
 <h1 align="center">LocalFit Lab</h1>
 
 <p align="center">
-  <strong>지도에서 후보를 찾고, 근거를 읽고, 실행 리포트까지.</strong><br />
   서울 상권 탐색과 출점 조건 검토를 하나의 워크스페이스로 연결합니다.
-</p>
-
-<p align="center">
-  <a href="https://whago.net"><img alt="Live Service" src="https://img.shields.io/badge/LIVE-whago.net-0f766e?style=for-the-badge"></a>
-  <img alt="Execution Demo" src="https://img.shields.io/badge/EXECUTION_DEMO-synthetic_data-14b8a6?style=for-the-badge">
-  <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js-16-111827?style=for-the-badge&logo=nextdotjs">
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-Python-05998b?style=for-the-badge&logo=fastapi">
 </p>
 
 <p align="center">
